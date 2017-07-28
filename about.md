@@ -8,4 +8,4 @@ permalink: /about/
 
 ### Contact me
 
-[email@domain.com](mailto:zjjblue@gmail.com)
+[zjjblue@gmail.com](mailto:zjjblue@gmail.com)
