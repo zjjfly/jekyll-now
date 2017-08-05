@@ -23,7 +23,7 @@ stack install hindent
 stack install stylish
 ```
 
-IDE我现在Intellij，所以要先安装**Intellij-Haskell**插件，然后在IDEA的设置的**Other Setting**->**Haskell**中设置hindent和stylish的可执行文件的路径，Mac中是在`~/.local/bin/`中，最好把这个目录也加到PATH中。![haskell-1-3.png]({{site.baseurl}}/images/20170805/haskell-1-3.png)
+IDE我选择Intellij，所以要先安装**Intellij-Haskell**插件，然后在IDEA的设置的**Other Setting**->**Haskell**中设置hindent和stylish的可执行文件的路径，Mac中是在`~/.local/bin/`中，最好把这个目录也加到PATH中。![haskell-1-3.png]({{site.baseurl}}/images/20170805/haskell-1-3.png)
 ## 第一个Haskell项目
 
 使用stack初始化一个项目：
