@@ -82,3 +82,8 @@ code {
 .highlight .vg { color: #268BD2 } /* Name.Variable.Global */
 .highlight .vi { color: #268BD2 } /* Name.Variable.Instance */
 .highlight .il { color: #2AA198 } /* Literal.Number.Integer.Long */
+code.highlighter-rouge {
+  background:#ddd;
+  border: solid 1px #aaa;
+  border-radius:3px;
+}
