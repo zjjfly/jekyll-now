@@ -266,9 +266,9 @@ with Indent() as indent:
 
 预期的输出:
 
-> hi!
-> &emsp;&emsp;hello
-> &emsp;&emsp;&emsp;&emsp;bonjour 
+> hi!<br/>
+> &emsp;&emsp;hello<br/>
+> &emsp;&emsp;&emsp;&emsp;bonjour<br/>
 > hey
 
 这样的API读着很像DSL,基本做到了代码即结果,你看代码就很容易知道它运行的结果,可读性很高.下面是`Indent`的实现:
@@ -325,7 +325,7 @@ print("_bar:%d" % test._bar)
 
 运行结果:
 
-> foo:11
+> foo:11<br/>
 > _bar:23
 
 所以,开头的下划线没有阻止`_bar`被外部代码访问,这只是一种编程规范.
@@ -352,7 +352,7 @@ _internal_func()
 
 输出结果:
 
-> 23
+> 23<br/>
 > NameError: "name '_internal_func' is not defined"
 
 但如果你遵守PEP 8,那么wildcard import并不是推荐的做法,使用一般的import更好.一般的import也不会发生这种以下划线开头的字段没有被导入的情况.
@@ -365,7 +365,7 @@ my_module._internal_func()
 
 输出结果:
 
-> 23
+> 23<br/>
 > 42
 
 ### 单下划线结尾:"var_"
@@ -400,7 +400,10 @@ t = Test()
 dir(t)
 ```
 
-> ['\_Test\_\_baz', '\_\_class\_\_', '\_\_delattr\_\_', '\_\_dict\_\_', '\_\_dir\_\_', '\_\_doc\_\_', '\_\_eq\_\_', '\_\_format\_\_', '\_\_ge\_\_', '\_\_getattribute\_\_', '\_\_gt\_\_', '\_\_hash\_\_', '\_\_init\_\_', '\_\_init\_subclass\_\_', '\_\_le\_\_', '\_\_lt\_\_', '\_\_module\_\_', '\_\_ne\_\_', '\_\_new\_\_', '\_\_reduce\_\_', '\_\_reduce\_ex\_\_', '\_\_repr\_\_', '\_\_setattr\_\_', '\_\_sizeof\_\_', '\_\_str\_\_', '\_\_subclasshook\_\_', '\_\_weakref\_\_', '\_bar', 'foo']
+> ['\_Test\_\_baz', '\_\_class\_\_', '\_\_delattr\_\_', '\_\_dict\_\_', '\_\_dir\_\_', '\_\_doc\_\_', '\_\_eq\_\_', '\_\_format\_\_', '\_\_ge\_\_',<br/>
+> '\_\_getattribute\_\_', '\_\_gt\_\_', '\_\_hash\_\_', '\_\_init\_\_', '\_\_init\_subclass\_\_', '\_\_le\_\_', '\_\_lt\_\_', '\_\_module\_\_', '\_\_ne\_\_',<br/>
+> '\_\_new\_\_', '\_\_reduce\_\_', '\_\_reduce\_ex\_\_', '\_\_repr\_\_', '\_\_setattr\_\_', '\_\_sizeof\_\_', '\_\_str\_\_', '\_\_subclasshook\_\_',<br/>
+> '\_\_weakref\_\_', '\_bar', 'foo']
 
 可以看出,`__baz`这个变量的名称被改为了`_Test__baz`.这是解释器的一种叫做名称重整的行为.这样做是为了防止这个变量被子类覆盖.
 
@@ -422,9 +425,8 @@ t2.__baz
 
 输出:
 
-> overridden
-> overridden
->
+> overridden<br/>
+> overridden<br/>
 > AttributeError:"'ExtendedTest' object has no attribute '__baz'"
 
 为什么会报错?因为又发生了名称重整:
@@ -481,8 +483,7 @@ mm.__method()
 
 输出:
 
-> 42
->
+> 42<br/>
 > AttributeError: 'MangledMethod' object has no attribute '__method'
 
 可以看出,因为名称重整,`MangledMethod`不存在名为`__method`的成员了.
@@ -554,8 +555,7 @@ mileage
 
 输出:
 
-> red
->
+> red<br/>
 > 3812.4
 
 在大多数Python REPL中,`_`还表示最近一个表达式的结果.
@@ -765,24 +765,24 @@ Python中有一个关于它的彩蛋,在Python REPL中输入下面的指令:
 
 <<Python之禅>>就会被打印出来:
 
-> The Zen of Python, by Tim Peters
->
-> Beautiful is better than ugly.
-> Explicit is better than implicit.
-> Simple is better than complex.
-> Complex is better than complicated.
-> Flat is better than nested.
-> Sparse is better than dense.
-> Readability counts.
-> Special cases aren't special enough to break the rules.
-> Although practicality beats purity.
-> Errors should never pass silently.
-> Unless explicitly silenced.
-> In the face of ambiguity, refuse the temptation to guess.
-> There should be one-- and preferably only one --obvious way to do it.
-> Although that way may not be obvious at first unless you're Dutch.
-> Now is better than never.
-> Although never is often better than *right* now.
-> If the implementation is hard to explain, it's a bad idea.
-> If the implementation is easy to explain, it may be a good idea.
+> The Zen of Python, by Tim Peters<br/>
+><br/>
+> Beautiful is better than ugly.<br/>
+> Explicit is better than implicit.<br/>
+> Simple is better than complex.<br/>
+> Complex is better than complicated.<br/>
+> Flat is better than nested.<br/>
+> Sparse is better than dense.<br/>
+> Readability counts.<br/>
+> Special cases aren't special enough to break the rules.<br/>
+> Although practicality beats purity.<br/>
+> Errors should never pass silently.<br/>
+> Unless explicitly silenced.<br/>
+> In the face of ambiguity, refuse the temptation to guess.<br/>
+> There should be one-- and preferably only one --obvious way to do it.<br/>
+> Although that way may not be obvious at first unless you're Dutch.<br/>
+> Now is better than never.<br/>
+> Although never is often better than *right* now.<br/>
+> If the implementation is hard to explain, it's a bad idea.<br/>
+> If the implementation is easy to explain, it may be a good idea.<br/>
 > Namespaces are one honking great idea -- let's do more of those!
