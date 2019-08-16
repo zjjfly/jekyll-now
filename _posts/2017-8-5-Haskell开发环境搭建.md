@@ -2,6 +2,7 @@
 layout: post
 title: Haskell开发环境搭建
 published: true
+tags: Haskell
 ---
 ## 安装
 首先安装Stack，一个Haskell的构建构建，类似Java的Gradle。Mac直接使用brew安装：

@@ -2,6 +2,7 @@
 layout: post
 title: Python Tricks之简洁之道
 published: true
+tags: Python Tricks
 ---
 
 这是<<Python Tricks>>一书的读书笔记.什么是Python Tricks?就是一小段Python代码,它既传授了Python语言的一个特性,也是一个让你深入发掘这一特性的驱动力.
