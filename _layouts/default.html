@@ -37,7 +37,9 @@
     <div id="main" role="main" class="container">
       {{ content }}
     </div>
-
+    <div class="tags-cloud">
+      {% include archive.html %}
+    </div>
     <div class="wrapper-footer">
       <div class="container">
         <footer class="footer">
@@ -47,6 +49,5 @@
     </div>
 
     {% include analytics.html %}
-    {% include archive.html %}
   </body>
 </html>
